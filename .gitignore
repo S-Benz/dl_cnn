@@ -1,0 +1,6 @@
+# ignore everything
+*
+
+# include .gitignore & notebook
+!.gitignore
+!*.ipynb
