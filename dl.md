@@ -144,3 +144,23 @@ Dense Layer 2x1
 --> 91,28%
 
 ### Iteration 10
+Added Simple Data augmentation for each train image:  
+* horizontal, vertical and combined flip
+* rotation 90 deg clockwise and counter clock wise
+
+-->  In total 300k train images instead of 50k took ~10seconds to augment
+
+Aufbau:  
+Conv Layer 32 Filter 3x3  
+Conv Layer 32 Filter 3x3
+
+Conv Layer 64 Filter 3x3  
+Conv Layer 64 Filter 3x3
+
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+
+Dense Layer 2048x1  
+Dense Layer 2x1    
+--> 
