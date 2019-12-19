@@ -87,7 +87,7 @@ Dense Layer 2x1
 --> 94.87
 
 ### Iteration 7
-Weglassen von dropout allen dropouts um zu prüfen wie stark diese aktuell optimieren bzw. ob starkes overfitting vorliegt.
+Weglassen von allen dropouts um zu prüfen wie stark diese aktuell optimieren bzw. ob starkes overfitting vorliegt.
 
 Aufbau:  
 Conv Layer 32 Filter 3x3  
@@ -144,6 +144,23 @@ Dense Layer 2x1
 --> 91,28%
 
 ### Iteration 10
+Increase learn rate to try and decrease epoch time
+
+Conv Layer 32 Filter 3x3  
+Conv Layer 32 Filter 3x3
+
+Conv Layer 64 Filter 3x3  
+Conv Layer 64 Filter 3x3
+
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+
+Dense Layer 2048x1  
+Dense Layer 2x1    
+--> 94,29% 
+
+### Iteration 11
 Added Simple Data augmentation for each train image:  
 * horizontal, vertical and combined flip
 * rotation 90 deg clockwise and counter clock wise
@@ -162,5 +179,25 @@ Conv Layer 128 Filter 3x3
 Conv Layer 128 Filter 3x3  
 
 Dense Layer 2048x1  
+Dense Layer 2x1    
+--> 
+
+# Iteration 12
+Add dropout to augment data version to see if it can improve the cnn  
+
+Aufbau:  
+Dropout 0,2  
+Conv Layer 32 Filter 3x3  
+Conv Layer 32 Filter 3x3
+Dropout 0,2  
+Conv Layer 64 Filter 3x3  
+Conv Layer 64 Filter 3x3
+Dropout 0,2  
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+Dropout 0,2  
+Dense Layer 2048x1  
+Dropout 0,4    
 Dense Layer 2x1    
 --> 
