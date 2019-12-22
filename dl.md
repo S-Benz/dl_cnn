@@ -180,7 +180,7 @@ Conv Layer 128 Filter 3x3
 
 Dense Layer 2048x1  
 Dense Layer 2x1    
---> 
+--> 95,01
 
 # Iteration 12
 Add dropout to augment data version to see if it can improve the cnn  
@@ -200,4 +200,115 @@ Dropout 0,2
 Dense Layer 2048x1  
 Dropout 0,4    
 Dense Layer 2x1    
---> 
+--> 90,96
+
+# Iteration 13
+Remove all dropout except for dense layer  
+
+Aufbau:  
+Conv Layer 32 Filter 3x3  
+Conv Layer 32 Filter 3x3
+
+Conv Layer 64 Filter 3x3  
+Conv Layer 64 Filter 3x3
+
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+  
+Dense Layer 2048x1  
+Dropout 0,4    
+Dense Layer 2x1    
+-->95,34%
+
+# Iteration 13
+Increase epochs from 10 to 20  
+with and without data augment:  
+with:
+Aufbau:  
+Conv Layer 32 Filter 3x3  
+Conv Layer 32 Filter 3x3  
+Dropout 0,2  
+Conv Layer 64 Filter 3x3  
+Conv Layer 64 Filter 3x3  
+Dropout 0,2  
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+  
+Dense Layer 2048x1  
+Dropout 0,4    
+Dense Layer 2x1    
+-->
+
+without:
+Aufbau:  
+Conv Layer 32 Filter 3x3  
+Conv Layer 32 Filter 3x3
+
+Conv Layer 64 Filter 3x3  
+Conv Layer 64 Filter 3x3
+
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+  
+Dense Layer 2048x1     
+Dense Layer 2x1    
+-->94,52%
+
+without with simple dropout:  
+Aufbau:  
+Conv Layer 32 Filter 3x3  
+Conv Layer 32 Filter 3x3
+
+Conv Layer 64 Filter 3x3  
+Conv Layer 64 Filter 3x3
+
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+  
+Dense Layer 2048x1  
+Dropout 0,4    
+Dense Layer 2x1    
+--> 94,63%
+
+without with more dropout:  
+Aufbau:  
+Conv Layer 32 Filter 3x3  
+Conv Layer 32 Filter 3x3  
+Dropout 0,2   
+
+Conv Layer 64 Filter 3x3  
+Conv Layer 64 Filter 3x3  
+Dropout 0,2   
+
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+  
+Dense Layer 2048x1  
+Dropout 0,4    
+Dense Layer 2x1    
+--> 95,71%
+
+without with more dropout + additional input dropout:  
+Aufbau:  
+dropout 0,2  
+Conv Layer 32 Filter 3x3  
+Conv Layer 32 Filter 3x3  
+Dropout 0,2   
+
+Conv Layer 64 Filter 3x3  
+Conv Layer 64 Filter 3x3  
+Dropout 0,2   
+
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+  
+Dense Layer 2048x1  
+Dropout 0,4    
+Dense Layer 2x1    
+--> 91,21%
