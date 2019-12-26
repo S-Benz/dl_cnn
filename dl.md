@@ -312,3 +312,22 @@ Dense Layer 2048x1
 Dropout 0,4    
 Dense Layer 2x1    
 --> 91,21%
+
+without with more augment:  
+Aufbau:   
+Conv Layer 32 Filter 3x3  
+Conv Layer 32 Filter 3x3  
+Dropout 0,2   
+
+Conv Layer 64 Filter 3x3  
+Conv Layer 64 Filter 3x3  
+Dropout 0,2   
+
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+Conv Layer 128 Filter 3x3  
+  
+Dense Layer 2048x1  
+Dropout 0,4    
+Dense Layer 2x1    
+--> 96,80%
